@@ -1,8 +1,4 @@
-const messages = require('../config/messages.json')
-
-const getMessages = (path, message) =>{
-    return messages[path] || message;
-}
+const { getMessages } = require('./messages');
 
 const getValidatorError = (error, messagePath) =>{
     if (!error) return null;
@@ -18,4 +14,4 @@ const getValidatorError = (error, messagePath) =>{
     // return {error};
 };
 
-module.exports = { getValidatorError, getMessages };
+module.exports = { getValidatorError };

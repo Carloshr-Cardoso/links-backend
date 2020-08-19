@@ -2,13 +2,13 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const { Account } = require('../models');
 const { accountSignUp } = require('../validators/account')
-const { getMessages } = require('../helpers/validator')
+const { getMessages } = require('../helpers/messages')
 
 const router = express.Router();
 const saltRounds = 10;
 
 router.get('/sign-in', (req, res)=>{
-    return res.json('sign in!')
+    return res.jsonOK(null);
 })
 
 router.get('/sign-up', accountSignUp, async (req, res)=>{
